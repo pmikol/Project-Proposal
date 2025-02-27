@@ -1,0 +1,250 @@
+\documentclass[12pt]{article}
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+%\usepackage[tocindentauto]{tocstyle}
+%\usetocstyle{KOMAlike} %the previous line resets it
+%\usepackage{natbib}
+\usepackage{biblatex}
+\addbibresource[]{ref.bib}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{graphviz}
+\usepackage[T1]{fontenc}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{hologo}
+\usepackage{listings}
+\usepackage{titlesec, blindtext, color}
+\usepackage{titling}
+\usepackage{tcolorbox}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{appendix}
+\usepackage{listings} % For code importing
+\usepackage{xcolor} % for setting colors
+\usepackage{svg}
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\input{arduinoLanguage.tex}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=cyan,
+}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+ }
+
+ \lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{commentsColor}\textit,    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=tb,	                   	   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{keywordsColor}\bfseries,       % keyword style
+  language=Python,                 % the language of the code (can be overrided per snippet)
+  otherkeywords={*,...},           % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=8pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{commentsColor}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{stringColor}, % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
+  columns=fixed                    % Using fixed column width (for e.g. nice alignment)
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+%\makeatletter
+%\let\thetitle\@title
+
+%\let\thedate\@date
+%\makeatother
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\rhead{\theauthor}
+%\lhead{\thetitle}
+%\cfoot{\thepage}
+
+\begin{document}
+\title{Project Proposal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+	\centering
+    \vspace*{0.5 cm}
+    \includegraphics[scale = 0.11]{isu_seal.png}\\[1.0 cm]	% University Logo
+    \textsc{\LARGE IOWA STATE UNIVERSITY}\\[2.0 cm]
+    \textsc{\large AEROSPACE ENGINEERING DEPARTMENT}\\[0.2 cm]
+    \textsc{\large Computational Techniques for Aerospace Design}\\[0.2 cm]
+	\textsc{\Large AERE 3610}\\[0.5 cm]				% Course Code
+	\textsc{\Large Project Proposal}\\[0.2 cm]
+	\textsc{\Large TEAM NAME HERE}\\[0.2 cm]
+	\rule{\linewidth}{0.2 mm} \\[0.4 cm]
+	%{ \huge \bfseries \thetitle}\\
+	
+	
+	\begin{minipage}{0.8\textwidth}
+		
+			\begin{flushleft} 
+			\emph{Team Member Names :} \\
+			Aldrich, Alec\linebreak
+			Hine, Randall\linebreak
+			Leuer, Jack\linebreak
+			Mikolitis, Peter\linebreak
+			Sheeder, First Name\linebreak
+			Last Name, First Name\linebreak
+			
+		\end{flushleft}
+	\end{minipage}\\[2 cm]
+	
+	\vfill
+	
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\maketitle
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ABSTRACT}
+The abstract is a summary of your proposal. Your abstract should have enough information so that if I were to copy and paste your abstract into a website, people would get a general idea of your proposal. It should not go into any heavy detail, just the basics of your project—the who, the what, and the why. You should keep your abstract to 200-400 words. Use this to ``hook in'' your reader. Also, notice how I did quotations around the word hook in the previous sentence. \LaTeX has a slightly different way of displaying that, and this method is the preferred way to do it.
+
+\section{INTRODUCTION}
+While the abstract and introduction may seem similar, remember that your abstract should have enough information to stand independently. The introduction is the actual start of your proposal. I would like you to introduce the project to the people involved and briefly explain why you are doing this. This should be 1-3 paragraphs.
+
+\section{FEATURES}
+Your Features section must list at least three key features that make your project unique. Each item needs to be backed up with a description of what it will do and why. Listing three items is not enough; you must describe those features and why your group feels they are needed. Therefore, your features should have a paragraph for each key item that represents that key feature. A key feature should be something significant to your project. For example, let's say your object will read in two sensor values and, based on temperature, lights up a light (feature 1), on pressure, moves a servo (feature 2), and then data logs those values and events (feature 3). Those are three key features. You should have a paragraph for each of those features.
+
+
+% Below is an example of inserting an image.  Not that LaTex
+% will determine the best location for the image.  Make sure
+% you replace this image with yours and place a proper caption.
+% You can use the \label{name} to name the figure and then reference
+% it from your writeup and LaTeX will automatically give it the correct
+% number. 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=4.5in]{images/clue.png}
+\caption{This is the Adafruit Clue Board}
+\label{fig:clue}
+\end{figure}
+
+\section{PROBLEM STATEMENT}
+You will go into more detail on what problem you hope to solve or address. All projects are required to have a problem that your project will solve. This is the research part of the project. You should discuss the problem and why it is important to solve it. You need to be clear on the problem in this section, so do not think of this as a ``light'' section. It helps to define your project. You should ask some questions like: What information are you trying to gather? What are you trying to learn? What are you trying to improve? As an engineer, you are a problem solver. This is where you define the problem you are solving.
+
+Your team needs to do some research into the problem at hand. Because of that, you should have \emph{three or more references} you are pulling from. You can find references from many places, including the ISU library and Google Scholar. I suggest looking at Adafruit's website, as you may find inspiration or looking to improve something already there. Remember to cite your sources if you find something online that can often be cited.
+
+When you create your ``ref.bib'' file, don't forget to follow the standards for a BibTex file. Certain things, like websites, require specific keywords to render correctly. There are many sources online to help with this, and many places like the ISU Library and Google Scholar can also generate text compatible with a BibTex file. Once you have your Bib file ready, don't forget to cite your citations in your proposal like this \cite{einstein} or this \cite{dirac}.
+
+\section{PROBLEM SOLUTION}
+Here, go over your approach to your solution and what your solution is. You must include at least one image that shows your concept. This image can be a sketch, drawing, or picture showing your idea. Ensure you reference the image(s) like this - Figure \ref{fig:clue}. Finally, make sure you replace the stock image I included. You should also reference any sources you had from your problem statement.
+
+You must include on what vehicle (Rocket or High-Altitude Balloon) that wish to ride on and why you want to use that vehicle. For the Spring 2025 semester, we have 26 teams this semester, so, we may need to do some balancing. But we will try to accomidate each teams request. The HAB spacecraft does have a larger carrying capacity and more volume compared to the rocket, so keep that in mind.
+
+You must also include a table listing all the parts you wish to have. The parts listed in Table \ref{table:parts_list} are the parts that all teams will get by default. Other parts can be requested, and we do have a number of additional sensors, servos, neopixel strips, and other parts. Talk to Professor Nelson if you have a question on any additional parts. Change the table below to reflect the parts you are requesting.
+
+\begin{table}[ht]
+  \caption{Parts available for teams}
+  \label{table:parts_list}
+  \begin{center}
+  \begin{tabular}{|p{3in}|c|}
+  
+  \hline
+  Part description & Qty\\
+  \hline
+  \hline
+  Adafruit Clue Board & 1 \\
+  \hline
+  Alligator wire cable  & 1 \\
+  \hline
+  USB Cable & 1 \\
+  \hline
+  \end{tabular}
+  \end{center}
+\end{table}
+
+
+Finally, you can include any pseudo code or snippets you have gathered so far. This is not required, but if you found some starter code or came up with some ideas for the code, put it here. If you want to embed code into \LaTeX, you can use the example below on how to do this in \LaTeX in the Listing \ref{lst:ex}.
+
+Please note, the example below is for Arduino (C/C++). If you are using CircuitPython, simply change the language from ``Arduino'' to ``Python''. All this does is change the color formatting of the code to match the keywords in the code. 
+
+\begin{lstlisting}[caption={An example of putting code in your report.},label={lst:ex},language=Arduino]
+#include <Adafruit_CircuitPlayground.h>
+
+void setup() {
+  CircuitPlayground.begin();
+}
+
+void loop() {
+  CircuitPlayground.clearPixels();
+
+  delay(500);
+
+  CircuitPlayground.setPixelColor(0, 255,   0,   0);
+  CircuitPlayground.setPixelColor(1, 128, 128,   0);
+  CircuitPlayground.setPixelColor(2,   0, 255,   0);
+  CircuitPlayground.setPixelColor(3,   0, 128, 128);
+  CircuitPlayground.setPixelColor(4,   0,   0, 255);
+  
+  CircuitPlayground.setPixelColor(5, 0xFF0000);
+  CircuitPlayground.setPixelColor(6, 0x808000);
+  CircuitPlayground.setPixelColor(7, 0x00FF00);
+  CircuitPlayground.setPixelColor(8, 0x008080);
+  CircuitPlayground.setPixelColor(9, 0x0000FF);
+ 
+  delay(5000);
+}
+\end{lstlisting}
+
+\section{CONCLUSION}
+Finally, wrap up your proposal. This only needs one or two paragraphs, but it should conclude with your plan and why and how. Yes, this may seem repetitive, but that is intentional. Do not forget to update your references, as those will appear below on a separate page.
+
+\newpage
+\section*{References}
+\printbibliography[heading=subbibintoc]
+%\bibliographystyle{plain}
+%\bibliography{ref}
+
+\end{document}
